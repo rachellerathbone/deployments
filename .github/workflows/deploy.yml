@@ -53,7 +53,6 @@ jobs:
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
-            environment: development
 
   deploy-to-staging1:
     runs-on: ubuntu-latest
