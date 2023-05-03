@@ -2,8 +2,6 @@ deployments:
   environmentMapping:
     development:
       - "dev*"
-      - "develop"
-      - "Entwicklung"
       - "desenvolvimento"
       - "дев"
     testing:
