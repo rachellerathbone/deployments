@@ -7,13 +7,13 @@ on: [push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy-to-dev2:
+  deploy-to-dev:
       runs-on: ubuntu-latest
-      environment: Entwicklung
+      environment: develop
       steps:
         - uses: actions/checkout@v3
           name: Create dev deployment
-          id: deploy-to-dev2
+          id: deploy-to-dev
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
