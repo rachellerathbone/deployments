@@ -12,7 +12,7 @@ jobs:
       environment: dev*
       steps:
         - uses: actions/checkout@v3
-          name: Create staging deployment
+          name: Create dev deployment
           id: deploy-to-dev1
           with:
             token: "${{ github.token }}"
@@ -24,7 +24,7 @@ jobs:
       environment: Entwicklung
       steps:
         - uses: actions/checkout@v3
-          name: Create staging deployment
+          name: Create dev deployment
           id: deploy-to-dev2
           with:
             token: "${{ github.token }}"
@@ -36,7 +36,7 @@ jobs:
       environment: trunk
       steps:
         - uses: actions/checkout@v3
-          name: desenvolvimento
+          name: Create dev deployment
           id: deploy-to-dev3
           with:
             token: "${{ github.token }}"
@@ -48,11 +48,12 @@ jobs:
       environment: my-unmapped-env
       steps:
         - uses: actions/checkout@v3
-          name: desenvolvimento
-          id: deploy-to-dev3
+          name: Create dev deployment
+          id: deploy-to-dev4
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
+            environment: development
 
   deploy-to-staging1:
     runs-on: ubuntu-latest
