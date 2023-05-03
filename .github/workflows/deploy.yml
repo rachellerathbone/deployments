@@ -19,13 +19,13 @@ jobs:
             target_url: http://my-cool-app.com
             environment: development
 
-  Entwicklung:
+  deploy-to-dev:
       runs-on: ubuntu-latest
-      environment: dev*
+      environment: Entwicklung
       steps:
         - uses: actions/checkout@v3
           name: Create staging deployment
-          id: Entwicklung
+          id: deploy-to-dev
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
