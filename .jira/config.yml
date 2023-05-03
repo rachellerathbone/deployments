@@ -2,6 +2,7 @@ deployments:
   environmentMapping:
     development:
       - "dev*"
+      - "random"
       - "desenvolvimento"
       - "дев"
     testing:
