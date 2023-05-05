@@ -18,3 +18,15 @@ jobs:
           token: "${{ github.token }}"
           target_url: http://my-cool-app.com
           environment: trunk
+
+  deploy-to-dev2:
+    runs-on: ubuntu-latest
+    environment: develop
+    steps:
+      - uses: actions/checkout@v3
+        name: Create develop deployment
+        id: deploy-to-dev2
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-cool-app.com
+          environment: trunk
