@@ -28,3 +28,15 @@ jobs:
         with:
           token: "${{ github.token }}"
           target_url: http://my-cool-app.com
+
+  deploy-to-dev3:
+      runs-on: ubuntu-latest
+      environment: Entwicklung
+      steps:
+        - uses: actions/checkout@v3
+          name: Create dev deployment
+          id: deploy-to-dev3
+          with:
+            token: "${{ github.token }}"
+            target_url: http://my-cool-app.com
+
