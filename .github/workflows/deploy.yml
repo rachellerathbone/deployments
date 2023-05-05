@@ -9,7 +9,7 @@ on: [push]
 jobs:
   deploy-to-dev1:
       runs-on: ubuntu-latest
-      environment: Entwicklung
+      environment: trunk
       steps:
         - uses: actions/checkout@v3
           name: Create dev deployment
@@ -17,6 +17,7 @@ jobs:
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
+            environment: trunk
 
   deploy-to-dev2:
       runs-on: ubuntu-latest
@@ -28,10 +29,12 @@ jobs:
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
+            environment: Staging
+            environment: develop
 
   deploy-to-dev3:
       runs-on: ubuntu-latest
-      environment: random
+      environment: Entwicklung
       steps:
         - uses: actions/checkout@v3
           name: Create dev deployment
@@ -39,3 +42,17 @@ jobs:
           with:
             token: "${{ github.token }}"
             target_url: http://my-cool-app.com
+            environment: development
+
+  deploy-to-dev4:
+      runs-on: ubuntu-latest
+      environment: Entwicklung
+      steps:
+        - uses: actions/checkout@v3
+          name: Create dev deployment
+          id: deploy-to-dev4
+          with:
+            token: "${{ github.token }}"
+            target_url: http://my-cool-app.com
+            environment: dev
+
