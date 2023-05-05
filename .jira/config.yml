@@ -3,3 +3,4 @@ deployments:
     development:
       - "develop"
       - "random"
+      - "new"

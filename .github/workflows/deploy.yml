@@ -39,3 +39,14 @@ jobs:
         with:
           token: "${{ github.token }}"
           target_url: http://my-cool-app.com
+
+  deploy-to-dev4:
+    runs-on: ubuntu-latest
+    environment: new
+    steps:
+      - uses: actions/checkout@v3
+        name: Create develop deployment
+        id: deploy-to-dev4
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-cool-app.com
