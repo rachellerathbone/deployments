@@ -3,4 +3,5 @@ deployments:
     development:
       - "develop"
       - "random"
+    staging:
       - "new"
