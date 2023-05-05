@@ -1,5 +1,0 @@
-deployments:
-  environmentMapping:
-    development:
-      - "develop"
-      - "random"
