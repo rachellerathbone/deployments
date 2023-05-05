@@ -7,52 +7,26 @@ on: [push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy-to-dev1:
-      runs-on: ubuntu-latest
-      environment: trunk
-      steps:
-        - uses: actions/checkout@v3
-          name: Create dev deployment
-          id: deploy-to-dev1
-          with:
-            token: "${{ github.token }}"
-            target_url: http://my-cool-app.com
-            environment: trunk
+  deploy-to-staging:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v3
+        name: Create staging deployment
+        id: deploy-to-staging
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-cool-app.com
+          environment: Staging
 
-  deploy-to-dev2:
-      runs-on: ubuntu-latest
-      environment: develop
-      steps:
-        - uses: actions/checkout@v3
-          name: Create dev deployment
-          id: deploy-to-dev2
-          with:
-            token: "${{ github.token }}"
-            target_url: http://my-cool-app.com
-            environment: Staging
-            environment: develop
-
-  deploy-to-dev3:
-      runs-on: ubuntu-latest
-      environment: Entwicklung
-      steps:
-        - uses: actions/checkout@v3
-          name: Create dev deployment
-          id: deploy-to-dev3
-          with:
-            token: "${{ github.token }}"
-            target_url: http://my-cool-app.com
-            environment: development
-
-  deploy-to-dev4:
-      runs-on: ubuntu-latest
-      environment: Entwicklung
-      steps:
-        - uses: actions/checkout@v3
-          name: Create dev deployment
-          id: deploy-to-dev4
-          with:
-            token: "${{ github.token }}"
-            target_url: http://my-cool-app.com
-            environment: any
-
+  deploy-to-random-env:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v3
+        name: Create staging deployment
+        id: deploy-to-random-env
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-cool-app.com
+          environment: any
