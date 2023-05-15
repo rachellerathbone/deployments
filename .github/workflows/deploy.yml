@@ -50,3 +50,15 @@ jobs:
         with:
           token: "${{ github.token }}"
           target_url: http://my-cool-app.com
+
+
+  deploy-to-dev5:
+    runs-on: ubuntu-latest
+    environment: "23.04-unstable"
+    steps:
+      - uses: actions/checkout@v3
+        name: Create develop deployment
+        id: deploy-to-dev5
+        with:
+          token: "${{ github.token }}"
+          target_url: http://my-cool-app.com
