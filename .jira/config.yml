@@ -3,10 +3,10 @@ deployments:
     development:
       - "develop"
       - "random"
-      - ".*-unstable"
+      - "*-unstable"
     staging:
       - "new"
     testing:
-      - ".*-testing"
+      - "*-testing"
     production:
-      - ".*-stable"
+      - "*-stable"
